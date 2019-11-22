@@ -288,9 +288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff21fe3a51c379b469561a18f5f10c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 2052758630}
   GameMenu: {fileID: 401436761578102813, guid: e7b88ed04c4e8a14a8d9b8ee01065796, type: 3}
   GameOver: {fileID: 266617121217159293, guid: 1b0b54ea768b911489f6aa10c0b60a88, type: 3}
-  GameStats: {fileID: 7688816981584138493, guid: 6614d242239e7834e872b37fb44f274f,
+  GameStats: {fileID: 7688816981584138488, guid: 6614d242239e7834e872b37fb44f274f,
     type: 3}
 --- !u!1 &456027321
 GameObject:
@@ -571,7 +572,6 @@ MonoBehaviour:
   - {fileID: -3215704614992419477, guid: 881c4386c6431d140ae31b489edb574f, type: 3}
   - {fileID: 1496170917185463035, guid: cf78db6ef952dcb4bb9b82f5286d2710, type: 3}
   BoardNumber: 0
-  TotalBrickOnBoard: 0
   NextBoardSplash: {fileID: 2802509894746164180, guid: 70fc12d6c8118814d94a0e04ff70738c,
     type: 3}
 --- !u!1 &941090029

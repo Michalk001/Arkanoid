@@ -35,7 +35,7 @@ public class PaddleManager : MonoBehaviour
     public float leftScreenEdge { get; set; }
     public float rightScreenEdge { get; set; }
     public float speed;
-    private GameObject gun = null;
+    public GameObject gun { get;set;} = null;
     private Vector3 startPosition;
     void Start()
     {
@@ -87,31 +87,13 @@ public class PaddleManager : MonoBehaviour
          
     }
     
-    private void AddGuns(float time, bool pernament)
-    {
-        if (gun == null)
-        {
-            gun = Instantiate(Guns[0], new Vector3(0.048f, 0.21f, 0), Quaternion.identity);
-            gun.transform.parent = Paddle.gameObject.transform;
-            gun.transform.localPosition = new Vector3(0.048f, 0.21f, 0);
-            gun.gameObject.transform.localScale = new Vector3(0.0403f, 0.024f, 0);
-        }
-        else
-            gun.SetActive(true);
-        if(!pernament)
-            Invoke("HiddenGuns", time);
-    }
-    private void HiddenGuns()
-    {
-        gun.SetActive(false);
-    }
     public void GetBonus(string id,float time,bool pernament)
     {
         switch (id)
         {
             case "gun":
             {
-                AddGuns(time, pernament);
+               
                 break;
             }
             case "heart":
@@ -124,6 +106,11 @@ public class PaddleManager : MonoBehaviour
                 GameManager.Instance.Life = 0;
                 break;
             }
+            case "oneHit":
+                {
+                    BallManager.Instance.Ball._demage = 10;
+                    break;
+                }
 
         }
     }

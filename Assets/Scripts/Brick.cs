@@ -38,9 +38,9 @@ public class Brick : MonoBehaviour
 
 
 
-    private void Hit()
+    private void Hit(int demage)
     {
-        _hitPoints--;
+        _hitPoints -= demage;
         if (_hitPoints <= 0)
         {
             if (bonus != null && _bonus == null)
@@ -79,17 +79,20 @@ public class Brick : MonoBehaviour
         {
             if (!indestructible)
             {
-                Hit();
+              
+                Hit(1);
             }
         }
     }
-        void OnCollisionEnter2D(Collision2D coll)
+    void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Ball" )
         {
             if (!indestructible)
             {
-                Hit();
+                Ball obj = coll.gameObject.GetComponent<Ball>();
+                if(obj)
+                    Hit(obj._demage);
             }
         }
     }

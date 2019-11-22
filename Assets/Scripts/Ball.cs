@@ -7,12 +7,13 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     private Rigidbody2D rb;
     public float speed;
-
-    
+    public int Demage = 1;
+    public int _demage { get; set; }
     void Start()
     {
-       
-       
+        _demage = Demage;
+
+
     }
     void Awake()
     {

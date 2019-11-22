@@ -27,7 +27,7 @@ public class Paddle : MonoBehaviour
         if (coll.gameObject.CompareTag("Bonus"))
         {
             var obj = coll.gameObject.GetComponent<Bonus>();
-            PaddleManager.Instance.GetBonus(obj.id,obj.time,obj.permanent);
+            BonusMenager.Instance.RunBonus(obj.id,obj.time,obj.permanent);
         }
     }
         public void PaddleStartPosition()

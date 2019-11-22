@@ -164,5 +164,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
-  isPlay: 0
-  paddle: {fileID: 0}
+  Demage: 1

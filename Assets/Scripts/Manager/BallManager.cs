@@ -24,24 +24,25 @@ public class BallManager : MonoBehaviour
 
     
 
-    public Ball initBall { get; set; } = null;
+    public Ball Ball { get; set; } = null;
 
-    private Rigidbody2D initRB;
+    private Rigidbody2D RB;
     public float initBallSpeed = 8000f;
 
     [SerializeField]
     public List<Ball> Balls;
     private void Start()
     {
-        Invoke("BallInit", 0.1f);
+        Invoke("Init", 0.1f);
     }
-    private void BallInit()
+    private void Init()
     {
         
         Vector3 paddlePosition = PaddleManager.Instance.Paddle.gameObject.transform.position;
         Vector3 startPosition = new Vector3(paddlePosition.x, paddlePosition.y, paddlePosition.z);
-        initBall = Instantiate(Balls[0], startPosition, Quaternion.identity);
-        initRB = initBall.GetComponent<Rigidbody2D>();
+        Ball = Instantiate(Balls[0], startPosition, Quaternion.identity);
+        Ball.transform.parent = gameObject.transform;
+        RB = Ball.GetComponent<Rigidbody2D>();
 
 
     }
@@ -55,9 +56,9 @@ public class BallManager : MonoBehaviour
 
     public void StopBall()
     {
-        initRB.isKinematic = false;
-        initRB.Sleep();
-        initRB.velocity = Vector2.zero;
+        RB.isKinematic = false;
+        RB.Sleep();
+        RB.velocity = Vector2.zero;
     }
 
     private void Update()
@@ -66,18 +67,18 @@ public class BallManager : MonoBehaviour
             if (!GameManager.Instance.IsGameStart && !GameManager.Instance.gamePause)
             {
 
-                if (initBall != null)
+                if (Ball != null)
                 {
                     Vector3 paddlePosition = PaddleManager.Instance.Paddle.gameObject.transform.position;
                     Vector3 ballPosition = new Vector3(paddlePosition.x, paddlePosition.y + 10.7f, 0);
-                    initBall.transform.position = ballPosition;
+                    Ball.transform.position = ballPosition;
                 }
                 if (Input.GetButtonDown("Jump"))
                 {
-               
-                    initRB.isKinematic = false;
-                    initRB.velocity = Vector2.zero;
-                    initRB.AddForce(new Vector2(0, initBallSpeed));
+
+                    RB.isKinematic = false;
+                    RB.velocity = Vector2.zero;
+                    RB.AddForce(new Vector2(0, initBallSpeed));
                     GameManager.Instance.IsGameStart = true;
 
                 }
