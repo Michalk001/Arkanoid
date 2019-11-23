@@ -92,6 +92,7 @@ public class BoardlManager : MonoBehaviour
 
         PlayLVL = true;
         changingBoard = false;
+        GameManager.Instance.gamePause = false;
     }
 
     private void Update()
@@ -101,8 +102,8 @@ public class BoardlManager : MonoBehaviour
             changingBoard = true;
             _NextBoardSplash.SetActive(true);
             PlayLVL = false;
+            GameManager.Instance.gamePause = true;
             ++BoardNumber;
-            Debug.Log(BoardNumber);
             Invoke("ChangeBoard", 2.5f);
         }
     }

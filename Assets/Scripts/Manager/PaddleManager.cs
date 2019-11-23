@@ -24,7 +24,6 @@ public class PaddleManager : MonoBehaviour
     }
     #endregion
 
-    private BoxCollider2D boxCollider2D;
     public GameObject leftSpriteBorder;
     public GameObject rightSpriteBorder;
     [SerializeField]
@@ -71,7 +70,7 @@ public class PaddleManager : MonoBehaviour
             Paddle = Instantiate(Paddles[0]);
             Paddle.transform.parent = gameObject.transform;
             Paddle.transform.position = pos;
-            boxCollider2D = Paddle.gameObject.GetComponent<BoxCollider2D>();
+
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -81,38 +80,12 @@ public class PaddleManager : MonoBehaviour
             Paddle = Instantiate(Paddles[1]);
             Paddle.transform.parent = gameObject.transform;
             Paddle.transform.position = pos;
-            boxCollider2D = Paddle.gameObject.GetComponent<BoxCollider2D>();
+          
         }
 
          
     }
     
-    public void GetBonus(string id,float time,bool pernament)
-    {
-        switch (id)
-        {
-            case "gun":
-            {
-               
-                break;
-            }
-            case "heart":
-            {
-                    GameManager.Instance.Life += 1;
-                break;
-            }
-            case "death":
-            {
-                GameManager.Instance.Life = 0;
-                break;
-            }
-            case "oneHit":
-                {
-                    BallManager.Instance.Ball._demage = 10;
-                    break;
-                }
-
-        }
-    }
+    
     
 }
