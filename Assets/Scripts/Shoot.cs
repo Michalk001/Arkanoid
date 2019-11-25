@@ -7,13 +7,20 @@ public class Shoot : MonoBehaviour
     public Bull bullPref;
     private float counter = 0;
     private int bullCounter = 0;
-    private List<Bull> bulls;
+    public List<Bull> bulls { get; set; }
     void Start()
     {
         bulls = new List<Bull>();
        
     }
 
+    public void HiddenBulls()
+    {
+        foreach(var item in bulls)
+        {
+            item.gameObject.SetActive(false);
+        }
+    }
  
     void Update()
     {

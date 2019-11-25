@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         BallManager.Instance.Reset();
         UIManager.Instance.HideGameOver();
         UIManager.Instance.HideGameMenu();
+        BonusManager.Instance.Reset();
     }
 
 

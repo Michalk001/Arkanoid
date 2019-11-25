@@ -44,6 +44,8 @@ public class Bull : MonoBehaviour
         RB.isKinematic = false;
         RB.velocity = Vector2.zero;
         gameObject.transform.position = gameObject.transform.parent.position;
+        parent = gameObject.transform.parent;
+        transform.parent = null;
         RB.AddForce(Vector2.up * speed);
        
 
@@ -51,7 +53,7 @@ public class Bull : MonoBehaviour
 
     private void HiddenObject()
     {
-
+        transform.parent = parent;
         gameObject.SetActive(false);
     }
 }

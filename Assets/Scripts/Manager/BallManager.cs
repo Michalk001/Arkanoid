@@ -22,15 +22,15 @@ public class BallManager : MonoBehaviour
     }
     #endregion
 
-    
 
-    public Ball Ball { get; set; } = null;
 
-    private Rigidbody2D RB;
+    public Ball Ball;
+
+   
     public float initBallSpeed = 8000f;
+    public int BallOnBoard { get; set; }
 
-    [SerializeField]
-    public List<Ball> Balls;
+    public List<Ball> Balls { get; set; } = null;
     private void Start()
     {
         Invoke("Init", 0.1f);
@@ -40,25 +40,32 @@ public class BallManager : MonoBehaviour
         
         Vector3 paddlePosition = PaddleManager.Instance.Paddle.gameObject.transform.position;
         Vector3 startPosition = new Vector3(paddlePosition.x, paddlePosition.y, paddlePosition.z);
-        Ball = Instantiate(Balls[0], startPosition, Quaternion.identity);
-        Ball.transform.parent = gameObject.transform;
-        RB = Ball.GetComponent<Rigidbody2D>();
+        var _ball = Instantiate(Ball, startPosition, Quaternion.identity);
+        _ball.transform.parent = gameObject.transform;
+        Balls = new List<Ball>();
+        Balls.Add(_ball);
+        var _ball2 = Instantiate(Ball, startPosition, Quaternion.identity);
+        _ball2.transform.parent = gameObject.transform;
 
+        Balls.Add(_ball2);
+        BallOnBoard = Balls.Count;
 
     }
 
     public void Reset()
     {
         StopBall();
-        Vector3 paddlePosition = PaddleManager.Instance.Paddle.gameObject.transform.position;
-        Vector3 startPosition = new Vector3(paddlePosition.x, paddlePosition.y, paddlePosition.z);
     }
 
     public void StopBall()
     {
-        RB.isKinematic = false;
-        RB.Sleep();
-        RB.velocity = Vector2.zero;
+        foreach(var item in Balls)
+        {
+            item.Rb.isKinematic = false;
+            item.Rb.Sleep();
+            item.Rb.velocity = Vector2.zero;
+        }
+  
     }
 
     private void Update()
@@ -67,20 +74,29 @@ public class BallManager : MonoBehaviour
             if (!GameManager.Instance.IsGameStart && !GameManager.Instance.gamePause)
             {
 
-                if (Ball != null)
+                if (Balls != null)
                 {
                     Vector3 paddlePosition = PaddleManager.Instance.Paddle.gameObject.transform.position;
-                    Vector3 ballPosition = new Vector3(paddlePosition.x, paddlePosition.y + 10.7f, 0);
-                    Ball.transform.position = ballPosition;
+                    Vector3 ballPosition = new Vector3(paddlePosition.x, paddlePosition.y + 11f, 0);
+                    foreach (var item in Balls)
+                    {
+                       // if(item)
+                            item.transform.position = ballPosition;
+                    }
+              
                 }
                 if (Input.GetButtonDown("Jump"))
                 {
 
-                    RB.isKinematic = false;
-                    RB.velocity = Vector2.zero;
-                    RB.AddForce(new Vector2(0, initBallSpeed));
+                    foreach (var item in Balls)
+                    {
+                       
+                            item.Rb.isKinematic = false;
+                            item.Rb.velocity = Vector2.zero;
+                            item.Rb.AddForce(new Vector2(0, initBallSpeed));
+                        
+                    }
                     GameManager.Instance.IsGameStart = true;
-
                 }
             }
             if (!BoardlManager.Instance.PlayLVL)

@@ -34,7 +34,7 @@ public class PaddleManager : MonoBehaviour
     public float leftScreenEdge { get; set; }
     public float rightScreenEdge { get; set; }
     public float speed;
-    public GameObject gun { get;set;} = null;
+    
     private Vector3 startPosition;
     void Start()
     {
@@ -53,8 +53,7 @@ public class PaddleManager : MonoBehaviour
     public void Reset()
     {
         Paddle.transform.position = startPosition;
-        if(gun != null)
-            gun.SetActive(false);
+       
        
         
     }
