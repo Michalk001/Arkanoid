@@ -90,6 +90,8 @@ public class BoardlManager : MonoBehaviour
 
         _NextBoardSplash.SetActive(false);
 
+        BallManager.Instance.OneBall();
+
         PlayLVL = true;
         changingBoard = false;
         GameManager.Instance.gamePause = false;

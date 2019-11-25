@@ -37,24 +37,31 @@ public class BallManager : MonoBehaviour
     }
     private void Init()
     {
-        
-        Vector3 paddlePosition = PaddleManager.Instance.Paddle.gameObject.transform.position;
-        Vector3 startPosition = new Vector3(paddlePosition.x, paddlePosition.y, paddlePosition.z);
-        var _ball = Instantiate(Ball, startPosition, Quaternion.identity);
-        _ball.transform.parent = gameObject.transform;
-        Balls = new List<Ball>();
-        Balls.Add(_ball);
-        var _ball2 = Instantiate(Ball, startPosition, Quaternion.identity);
-        _ball2.transform.parent = gameObject.transform;
 
-        Balls.Add(_ball2);
-        BallOnBoard = Balls.Count;
-
+        OneBall();
     }
 
     public void Reset()
     {
         StopBall();
+    }
+
+    public void OneBall()
+    {
+        if(Balls != null)
+            foreach (var item in Balls)
+                Destroy(item);
+        Balls = null;
+        Vector3 paddlePosition = PaddleManager.Instance.Paddle.gameObject.transform.position;
+        Vector3 startPosition = new Vector3(paddlePosition.x, paddlePosition.y, paddlePosition.z);
+        var _ball = Instantiate(Ball, startPosition, Quaternion.identity);
+        _ball.transform.parent = gameObject.transform;
+        Balls = new List<Ball>
+        {
+            _ball
+        };
+
+        BallOnBoard = Balls.Count;
     }
 
     public void StopBall()

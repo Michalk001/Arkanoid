@@ -75,6 +75,11 @@ public class BonusManager : MonoBehaviour
                     ChangePaddle(0);
                     break;
                 }
+            case "multiball":
+                {
+                    SpawnMultiBall();
+                    break;
+                }
         }
 
     }
@@ -190,10 +195,32 @@ public class BonusManager : MonoBehaviour
     }
     #endregion
 
-    public void Update()
+    #region MultiBall
+
+    private void SpawnMultiBall()
     {
-        HiddenGuns();
-        RemoveOneHit(); 
+        var balls = BallManager.Instance.Balls;
+        foreach (var item in balls)
+        {
+            Vector3 startPosition = new Vector3(item.transform.position.x, item.transform.position.y, item.transform.position.z);
+            var _ball = Instantiate(BallManager.Instance.Ball, startPosition, Quaternion.identity);
+            var _ball2 = Instantiate(BallManager.Instance.Ball, startPosition, Quaternion.identity);
+            _ball.Rb.AddForce(new Vector2(BallManager.Instance.initBallSpeed/2, BallManager.Instance.initBallSpeed));
+            _ball2.Rb.AddForce(new Vector2(-BallManager.Instance.initBallSpeed / 2, BallManager.Instance.initBallSpeed));
+
+            _ball.transform.parent = _ball2.transform.parent = BallManager.Instance.gameObject.transform;
+            BallManager.Instance.Balls.Add(_ball);
+            BallManager.Instance.Balls.Add(_ball2);
+            BallManager.Instance.BallOnBoard = BallManager.Instance.Balls.Count;
+        }
     }
+
+    #endregion
+
+public void Update()
+{
+    HiddenGuns();
+    RemoveOneHit(); 
+}
 
 }

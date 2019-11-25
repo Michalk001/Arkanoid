@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8cb086094ad404d9c3544f819ce5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 2915aa3e04c94854db27c84b19754bb9, type: 3}
+  sprite: {fileID: 21300000, guid: 1245ee1c26d79624db061f41dc0ade87, type: 3}
   speed: 2000
   id: multiball
   time: 10
