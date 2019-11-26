@@ -42,8 +42,7 @@ public class UIManager : MonoBehaviour
         SetCamera(GameMenu);
         SetCamera(GameOver);
         SetCamera(GameStats.gameObject);
-        _gameStats = Instantiate(GameStats);
-        _gameStats.gameObject.transform.SetParent(gameObject.transform);
+        _gameStats = Instantiate(GameStats, gameObject.transform);
         _gameStats.gameManager = gameManager;
     }
 
@@ -58,8 +57,7 @@ public class UIManager : MonoBehaviour
     {
         if (_gameMenu == null)
         {
-            _gameMenu = Instantiate(GameMenu);
-            _gameMenu.gameObject.transform.parent = gameObject.transform;
+            _gameMenu = Instantiate(GameMenu, gameObject.transform);
         }
         else
             _gameMenu.SetActive(true);
@@ -75,8 +73,8 @@ public class UIManager : MonoBehaviour
     {
         if (_gameOver == null)
         {
-            _gameOver = Instantiate(GameOver);
-            _gameMenu.gameObject.transform.parent = gameObject.transform;
+            _gameOver = Instantiate(GameOver, gameObject.transform);
+
         }
         else
             _gameOver.SetActive(true);

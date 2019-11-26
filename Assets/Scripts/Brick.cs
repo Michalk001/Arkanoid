@@ -21,18 +21,30 @@ public class Brick : MonoBehaviour
 
     void Start()
     {
-        _hitPoints = hitPoints;
+       
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = BrickManager.Instance.Sprites[hitPoints - 1];
+        if (indestructible)
+            spriteRenderer.sprite = BrickManager.Instance.IndestructibleSprites[0];
+        else
+        {
+            spriteRenderer.sprite = BrickManager.Instance.Sprites[hitPoints - 1];
+            _hitPoints = hitPoints;
+        }
     }
 
     public void Reset()
     {
-        _hitPoints = hitPoints;
-        spriteRenderer.sprite = BrickManager.Instance.Sprites[hitPoints - 1];
+        if (indestructible)
+            spriteRenderer.sprite = BrickManager.Instance.IndestructibleSprites[0];
+        else
+        {
+            spriteRenderer.sprite = BrickManager.Instance.Sprites[hitPoints - 1];
+            _hitPoints = hitPoints;
+            if (_bonus != null)
+                _bonus.gameObject.SetActive(false);
+        }
         gameObject.SetActive(true);
-        if (_bonus != null)
-            _bonus.gameObject.SetActive(false);
+       
         Destroy(_destroyEffect);
         Destroy(_hitEffect);
     }

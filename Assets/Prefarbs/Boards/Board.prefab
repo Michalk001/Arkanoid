@@ -2495,6 +2495,11 @@ PrefabInstance:
       propertyPath: hitPoints
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3490119461789721866, guid: d88fd89a70fd095458f702e1b6242c75,
+        type: 3}
+      propertyPath: indestructible
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d88fd89a70fd095458f702e1b6242c75, type: 3}
 --- !u!4 &8232160702579914184 stripped
