@@ -22,7 +22,9 @@ public class Bonus : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = sprite;
         RB = GetComponent<Rigidbody2D>();
-        Move();
+        RB.isKinematic = false;
+        RB.velocity = Vector2.zero;
+        RB.AddForce(Vector2.down * speed);
     }
     public void StopMovement()
     {

@@ -18,6 +18,7 @@ public class Brick : MonoBehaviour
     private Bonus _bonus = null;
     public GameObject _destroyEffect;
     public GameObject _hitEffect;
+
     void Start()
     {
         _hitPoints = hitPoints;
@@ -40,6 +41,8 @@ public class Brick : MonoBehaviour
 
     private void Hit(int demage)
     {
+       
+
         _hitPoints -= demage;
         if (_hitPoints <= 0)
         {
@@ -59,7 +62,7 @@ public class Brick : MonoBehaviour
 
             }
             GameManager.Instance.TotalScore += Score;
-            BoardlManager.Instance.TotalBrickOnBoard -= 1;
+          
             ShowDestroyEffect(destroyEffect);
             gameObject.SetActive(false);
         }
@@ -88,6 +91,7 @@ public class Brick : MonoBehaviour
     {
         if (coll.gameObject.tag == "Ball" )
         {
+    
             if (!indestructible)
             {
                 Ball obj = coll.gameObject.GetComponent<Ball>();

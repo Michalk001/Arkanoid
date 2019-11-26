@@ -7,6 +7,10 @@ public class Board : MonoBehaviour
 
 
     private Brick[] bricks;
+    public int CountCurrentyBrickInBoard()
+    {
+        return bricks.Where(x => x.indestructible == false).Where(x => x.gameObject.activeSelf == true).Count();
+    }
     public void Reset()
     {
       

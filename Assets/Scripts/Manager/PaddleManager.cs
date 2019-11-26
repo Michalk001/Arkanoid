@@ -81,8 +81,13 @@ public class PaddleManager : MonoBehaviour
             Paddle.transform.position = pos;
           
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
 
-         
+            BonusManager.Instance.SpawnMultiBall();
+
+        }
+
     }
     
     

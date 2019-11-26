@@ -78,10 +78,7 @@ public class GameManager : MonoBehaviour
     }
     private void ShowGameMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            Reset();
-        }
+       
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (gamePause)

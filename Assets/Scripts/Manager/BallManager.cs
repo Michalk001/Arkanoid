@@ -43,14 +43,16 @@ public class BallManager : MonoBehaviour
 
     public void Reset()
     {
+   
         StopBall();
+        OneBall();
     }
 
     public void OneBall()
     {
         if(Balls != null)
             foreach (var item in Balls)
-                Destroy(item);
+                Destroy(item.gameObject);
         Balls = null;
         Vector3 paddlePosition = PaddleManager.Instance.Paddle.gameObject.transform.position;
         Vector3 startPosition = new Vector3(paddlePosition.x, paddlePosition.y, paddlePosition.z);
@@ -87,8 +89,7 @@ public class BallManager : MonoBehaviour
                     Vector3 ballPosition = new Vector3(paddlePosition.x, paddlePosition.y + 11f, 0);
                     foreach (var item in Balls)
                     {
-                       // if(item)
-                            item.transform.position = ballPosition;
+                        item.transform.position = ballPosition;
                     }
               
                 }

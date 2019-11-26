@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class BoardlManager : MonoBehaviour
 {
 
@@ -68,14 +68,13 @@ public class BoardlManager : MonoBehaviour
 
     private void ChangeBoard()
     {
-        
+        BallManager.Instance.OneBall();
         GameManager.Instance.IsGameStart = false;
         boards[CurrentyBoard].gameObject.SetActive(false);
         
         if (BoardNumber > Boards.Count - 1)
             BoardNumber = 0;
         CurrentyBoard = BoardNumber;
-        Debug.Log(BoardNumber);
         if (boards.Count <= BoardNumber)
         {
      
@@ -90,12 +89,14 @@ public class BoardlManager : MonoBehaviour
 
         _NextBoardSplash.SetActive(false);
 
-        BallManager.Instance.OneBall();
+     
 
         PlayLVL = true;
         changingBoard = false;
         GameManager.Instance.gamePause = false;
     }
+
+   
 
     private void Update()
     {
@@ -107,6 +108,10 @@ public class BoardlManager : MonoBehaviour
             GameManager.Instance.gamePause = true;
             ++BoardNumber;
             Invoke("ChangeBoard", 2.5f);
+        }
+        else
+        {
+            TotalBrickOnBoard = boards[CurrentyBoard].CountCurrentyBrickInBoard();
         }
     }
 

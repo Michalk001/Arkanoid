@@ -239,7 +239,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 120518815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c38f8ba242f85840be3b594ce41744b, type: 3}
+  m_Script: {fileID: 11500000, guid: dd7821826b80db044959f915dfa927a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &122279682
@@ -285,9 +285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe6f19a988df7a49836e70a04cd1f35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ball: {fileID: 8253495856356152753, guid: bd196878aa2b17e43a6de2f288ce4b77, type: 3}
   initBallSpeed: 8000
-  Balls:
-  - {fileID: 8253495856356152753, guid: bd196878aa2b17e43a6de2f288ce4b77, type: 3}
 --- !u!1 &316329548
 GameObject:
   m_ObjectHideFlags: 0
