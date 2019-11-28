@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Rigidbody2D Rb { get; set;}
+    public Rigidbody2D Rb;
     public float speed;
     public int Demage = 1;
     public int _demage { get; set; }
@@ -15,11 +15,7 @@ public class Ball : MonoBehaviour
 
 
     }
-    void Awake()
-    {
-       
-        Rb = GetComponent<Rigidbody2D>();
-    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
      

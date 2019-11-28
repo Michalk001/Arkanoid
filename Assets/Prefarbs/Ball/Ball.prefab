@@ -163,5 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb240a700e9ff949b233cc10740a83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Rb: {fileID: 8253495856356152752}
   speed: 500
   Demage: 1

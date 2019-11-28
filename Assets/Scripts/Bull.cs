@@ -8,9 +8,9 @@ public class Bull : MonoBehaviour
 
     public Sprite bull;
     private SpriteRenderer spriteRenderer;
-    private Rigidbody2D RB;
+    public Rigidbody2D RB;
     public float speed;
-    public Transform parent;
+    public Transform parent { get; set; }
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -39,7 +39,7 @@ public class Bull : MonoBehaviour
     
     public void Move()
     {
-        RB = GetComponent<Rigidbody2D>();
+        
         gameObject.SetActive(true);
         RB.isKinematic = false;
         RB.velocity = Vector2.zero;

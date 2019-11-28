@@ -87,7 +87,7 @@ public class BonusManager : MonoBehaviour
 
     #region GunsBonus
     private bool hiddenGun = false;
-    private void AddGuns(float time, bool pernament)
+    public void AddGuns(float time, bool pernament)
     {
 
         if (gun == null)

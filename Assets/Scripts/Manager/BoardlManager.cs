@@ -96,18 +96,22 @@ public class BoardlManager : MonoBehaviour
         GameManager.Instance.gamePause = false;
     }
 
+    public void NextBoard()
+    {
+        changingBoard = true;
+        _NextBoardSplash.SetActive(true);
+        PlayLVL = false;
+        GameManager.Instance.gamePause = true;
+        ++BoardNumber;
+        Invoke("ChangeBoard", 2.5f);
+    }
    
 
     private void Update()
     {
         if (TotalBrickOnBoard <=0 && !changingBoard)
         {
-            changingBoard = true;
-            _NextBoardSplash.SetActive(true);
-            PlayLVL = false;
-            GameManager.Instance.gamePause = true;
-            ++BoardNumber;
-            Invoke("ChangeBoard", 2.5f);
+            NextBoard();
         }
         else
         {

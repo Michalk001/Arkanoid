@@ -61,32 +61,7 @@ public class PaddleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-           
-            var pos = Paddle.transform.position;
-            Destroy(Paddle.gameObject);
-            Paddle = Instantiate(Paddles[0]);
-            Paddle.transform.parent = gameObject.transform;
-            Paddle.transform.position = pos;
-
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-
-            var pos = Paddle.transform.position;
-            Destroy(Paddle.gameObject);
-            Paddle = Instantiate(Paddles[1]);
-            Paddle.transform.parent = gameObject.transform;
-            Paddle.transform.position = pos;
-          
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-
-            BonusManager.Instance.SpawnMultiBall();
-
-        }
+        
 
     }
     
