@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 379ee6c18d34fcf469e7a6ceb8519b63, type: 3}
+  spriteRenderer: {fileID: 4359864905208182254}
+  RB: {fileID: 4359864905208182255}
   speed: 2000
   id: paddleShort
   time: 10

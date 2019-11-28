@@ -7,6 +7,7 @@ public class Shoot : MonoBehaviour
     public Bull bullPref;
     private float counter = 0;
     private int bullCounter = 0;
+    private int maxBullInstance = 10;
     public List<Bull> bulls { get; set; }
     void Start()
     {
@@ -45,7 +46,7 @@ public class Shoot : MonoBehaviour
                     bulls[bullCounter].gameObject.SetActive(true);
                     bulls[bullCounter].Move();
                 }
-                if (bullCounter >= 9)
+                if (bullCounter >= maxBullInstance-1)
                     bullCounter = 0;
                 else
                     ++bullCounter;

@@ -143,6 +143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 2915aa3e04c94854db27c84b19754bb9, type: 3}
+  spriteRenderer: {fileID: 1077200720953194024}
+  RB: {fileID: 1077200720953194025}
   speed: 2000
   id: death
   time: 10
+  permanent: 0

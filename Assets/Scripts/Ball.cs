@@ -9,6 +9,10 @@ public class Ball : MonoBehaviour
     public float speed;
     public int Demage = 1;
     public int _demage { get; set; }
+    private readonly int crossMove = 200;
+
+    private readonly string BottomWallTag = "BottomWall";
+    private readonly string PaddleTag = "Paddle";
     void Start()
     {
         _demage = Demage;
@@ -19,7 +23,7 @@ public class Ball : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
      
-        if (other.CompareTag("BottomWall"))
+        if (other.CompareTag(BottomWallTag))
         {
             if (BallManager.Instance.BallOnBoard <= 1)
             {
@@ -42,7 +46,7 @@ public class Ball : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {
 
-        if (coll.gameObject.tag == "Paddle")
+        if (coll.gameObject.tag == PaddleTag)
         {
           
             Vector3 hitPoint = coll.contacts[0].point;
@@ -52,22 +56,15 @@ public class Ball : MonoBehaviour
             float difference = paddleCenter.x - hitPoint.x;
             if (hitPoint.x < paddleCenter.x)
             {
-                Rb.AddForce(new Vector2(-(Mathf.Abs(difference * 200)), 8000f));
+                Rb.AddForce(new Vector2(-(Mathf.Abs(difference * crossMove)), speed));
             }
             else
             {
-                Rb.AddForce(new Vector2((Mathf.Abs(difference * 200)), 8000f));
+                Rb.AddForce(new Vector2((Mathf.Abs(difference * crossMove)), speed));
             }
         }
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-   
-       
-    }
 
    
 

@@ -164,5 +164,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rb: {fileID: 8253495856356152752}
-  speed: 500
+  speed: 8000
   Demage: 1

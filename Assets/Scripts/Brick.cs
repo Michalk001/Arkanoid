@@ -18,6 +18,8 @@ public class Brick : MonoBehaviour
     private Bonus _bonus = null;
     public GameObject _destroyEffect;
     public GameObject _hitEffect;
+    private readonly string BallTag = "Ball";
+    private readonly string BullTag = "Bull";
 
     void Start()
     {
@@ -90,7 +92,7 @@ public class Brick : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.CompareTag("Bull"))
+        if (coll.gameObject.CompareTag(BullTag))
         {
             if (!indestructible)
             {
@@ -101,7 +103,7 @@ public class Brick : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Ball" )
+        if (coll.gameObject.tag == BallTag)
         {
     
             if (!indestructible)

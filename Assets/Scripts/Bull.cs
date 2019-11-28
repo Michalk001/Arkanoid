@@ -10,7 +10,11 @@ public class Bull : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Rigidbody2D RB;
     public float speed;
-    public Transform parent { get; set; }
+    public Transform Parent { get; set; }
+
+    private readonly string BrickTag = "Brick";
+    private readonly string WallTag = "Brick";
+    private readonly float TimeToHidden = 2.5f;
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -18,7 +22,7 @@ public class Bull : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Wall" || coll.gameObject.tag == "Brick")
+        if (coll.gameObject.tag == WallTag || coll.gameObject.tag == BrickTag)
         {
             HiddenObject();
         }
@@ -32,7 +36,7 @@ public class Bull : MonoBehaviour
             RB.isKinematic = false;
             RB.Sleep();
             RB.velocity = Vector2.zero;
-            Invoke("HiddenObject", 2.5f);
+            Invoke("HiddenObject", TimeToHidden);
         }
                 
     }
@@ -44,7 +48,7 @@ public class Bull : MonoBehaviour
         RB.isKinematic = false;
         RB.velocity = Vector2.zero;
         gameObject.transform.position = gameObject.transform.parent.position;
-        parent = gameObject.transform.parent;
+        Parent = gameObject.transform.parent;
         transform.parent = null;
         RB.AddForce(Vector2.up * speed);
        
@@ -53,7 +57,7 @@ public class Bull : MonoBehaviour
 
     private void HiddenObject()
     {
-        transform.parent = parent;
+        transform.parent = Parent;
         gameObject.SetActive(false);
     }
 }

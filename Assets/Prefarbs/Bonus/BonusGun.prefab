@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 1299287e9052ba6478e8b8ad5f41e307, type: 3}
+  spriteRenderer: {fileID: 3602936628024197988}
+  RB: {fileID: 3602936628024197989}
   speed: 2000
   id: gun
   time: 20

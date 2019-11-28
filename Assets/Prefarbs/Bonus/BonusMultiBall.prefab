@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 1245ee1c26d79624db061f41dc0ade87, type: 3}
+  spriteRenderer: {fileID: 7769165045329098155}
+  RB: {fileID: 7769165045329098154}
   speed: 2000
   id: multiball
   time: 10
