@@ -12,7 +12,7 @@ public class CheatsManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
 
-            BonusManager.Instance.SpawnMultiBall();
+           // BonusManager.Instance.SpawnMultiBall();
 
         }
     }
@@ -28,7 +28,7 @@ public class CheatsManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            BonusManager.Instance.AddGuns(20, false);
+           // BonusManager.Instance.AddGuns(20, false);
         }
     }
     private void NextBoard()

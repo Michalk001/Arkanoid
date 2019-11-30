@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5465760457486180032}
   - component: {fileID: 5465760457486180035}
   - component: {fileID: 5465760457486180039}
+  - component: {fileID: 7349355299178035363}
   m_Layer: 0
   m_Name: BonusOneHit
   m_TagString: Bonus
@@ -149,3 +150,18 @@ MonoBehaviour:
   id: oneHit
   time: 10
   permanent: 0
+--- !u!114 &7349355299178035363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465760457486180034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055072ca878bbd14ab055ecd2b2e6cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 4
+  pernament: 0
+  Damage: 100

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1077200720953194025}
   - component: {fileID: 1077200720953194026}
   - component: {fileID: 1077200720953194030}
+  - component: {fileID: 7283129673053342090}
   m_Layer: 0
   m_Name: BonusDeath
   m_TagString: Bonus
@@ -149,3 +150,15 @@ MonoBehaviour:
   id: death
   time: 10
   permanent: 0
+--- !u!114 &7283129673053342090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077200720953194027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d2a7e9617ec5a45968f8d3aece11a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

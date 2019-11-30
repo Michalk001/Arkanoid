@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3602936628024197989}
   - component: {fileID: 3602936628024197990}
   - component: {fileID: 3602936628024197986}
+  - component: {fileID: 3219178355730336462}
   m_Layer: 0
   m_Name: BonusGun
   m_TagString: Bonus
@@ -149,3 +150,17 @@ MonoBehaviour:
   id: gun
   time: 20
   permanent: 0
+--- !u!114 &3219178355730336462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3602936628024197991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0b0b76b2043a640bd4aa5bbeb0565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorkTime: 10
+  Pernament: 0

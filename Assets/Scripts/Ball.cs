@@ -7,15 +7,15 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     public Rigidbody2D Rb;
     public float speed;
-    public int Demage = 1;
-    public int _demage { get; set; }
+    public int Damage = 1;
+    public int _damage { get; set; }
     private readonly int crossMove = 200;
 
     private readonly string BottomWallTag = "BottomWall";
     private readonly string PaddleTag = "Paddle";
     void Start()
     {
-        _demage = Demage;
+        _damage = Damage;
 
 
     }

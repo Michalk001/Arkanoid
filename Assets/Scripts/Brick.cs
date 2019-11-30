@@ -110,7 +110,7 @@ public class Brick : MonoBehaviour
             {
                 Ball obj = coll.gameObject.GetComponent<Ball>();
                 if(obj)
-                    Hit(obj._demage);
+                    Hit(obj._damage);
             }
         }
     }

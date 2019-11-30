@@ -22,7 +22,7 @@ public class Bonus : MonoBehaviour
     }
     void Start()
     {
-      
+        
         Init();
     }
 
@@ -45,14 +45,15 @@ public class Bonus : MonoBehaviour
     {
         if (coll.gameObject.CompareTag(PaddleTag) || coll.gameObject.CompareTag(BottomWallTag))
         {
-            gameObject.SetActive(false);
+            StopMovement();
+            transform.position = new Vector3(60000000, 6000000, -100000000);
         }
     }
-        void Update()
+    void Update()
+    {
+        if (!BoardlManager.Instance.PlayLVL)
         {
-            if (!BoardlManager.Instance.PlayLVL)
-            {
-                StopMovement();
-            }
+            StopMovement();
         }
+    }
 }

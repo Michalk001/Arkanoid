@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7769165045329098154}
   - component: {fileID: 7769165045329098153}
   - component: {fileID: 7769165045329098157}
+  - component: {fileID: 8675236610976562100}
   m_Layer: 0
   m_Name: BonusMultiBall
   m_TagString: Bonus
@@ -149,3 +150,15 @@ MonoBehaviour:
   id: multiball
   time: 10
   permanent: 1
+--- !u!114 &8675236610976562100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769165045329098152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb596e57bbc095d418de88eec4252f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

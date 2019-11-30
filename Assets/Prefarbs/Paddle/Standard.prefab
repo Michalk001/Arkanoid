@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4242765797621603134}
   - component: {fileID: 8406457440894883003}
   - component: {fileID: 8146814465956424554}
+  - component: {fileID: 4732132861179236026}
   m_Layer: 0
   m_Name: Standard
   m_TagString: Paddle
@@ -142,3 +143,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4732132861179236026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242765797621603075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332a477375b4a304ba48123f6eed3724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 25, y: 40, z: 1}
+  speed: 20

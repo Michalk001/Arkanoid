@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2619084037834987586}
   - component: {fileID: 2619084037834987585}
   - component: {fileID: 2619084037834987589}
+  - component: {fileID: 3857926948556669999}
   m_Layer: 0
   m_Name: BonusPaddleStandard
   m_TagString: Bonus
@@ -149,3 +150,17 @@ MonoBehaviour:
   id: paddleStandard
   time: 10
   permanent: 1
+--- !u!114 &3857926948556669999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619084037834987584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332a477375b4a304ba48123f6eed3724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 25, y: 40, z: 1}
+  speed: 20

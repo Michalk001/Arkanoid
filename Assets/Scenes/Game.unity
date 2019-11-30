@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd7821826b80db044959f915dfa927a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedScale: 20
 --- !u!1 &122279682
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,12 +664,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftSpriteBorder: {fileID: 1674747611}
   rightSpriteBorder: {fileID: 456027321}
-  Paddles:
-  - {fileID: 8406457440894883003, guid: edf4513e4f5c4b14597e0e6a1f7af303, type: 3}
-  - {fileID: 3121370972513910496, guid: 5b4cfa5c28af3cd45b032fce05b2b2e1, type: 3}
+  PaddlePref: {fileID: 8406457440894883003, guid: edf4513e4f5c4b14597e0e6a1f7af303,
+    type: 3}
   Guns:
   - {fileID: 8503603731766482280, guid: 45f5ff2b00144624fa91330c95e3cb45, type: 3}
-  speed: 500
+  speed: 150
 --- !u!1 &1640400262
 GameObject:
   m_ObjectHideFlags: 0
