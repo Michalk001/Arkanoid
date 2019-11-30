@@ -26,8 +26,7 @@ public class PaddleManager : MonoBehaviour
 
     public GameObject leftSpriteBorder;
     public GameObject rightSpriteBorder;
-    [SerializeField]
-    public List<Paddle> Paddles;
+    public Paddle PaddlePref;
     [SerializeField]
     public List<GameObject> Guns;
     public Paddle Paddle { get; set; } = null;
@@ -46,16 +45,17 @@ public class PaddleManager : MonoBehaviour
     }
     private void Init()
     {
-        Paddle = Instantiate(Paddles[0]);
+        Paddle = Instantiate(PaddlePref);
         Paddle.transform.parent = gameObject.transform;
         startPosition = Paddle.transform.position;
     }
     public void Reset()
     {
         Paddle.transform.position = startPosition;
-       
-       
-        
+        Paddle.transform.localScale = new Vector3(25, 40, 1);
+
+
+
     }
 
     // Update is called once per frame

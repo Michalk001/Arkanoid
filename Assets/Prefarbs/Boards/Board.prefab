@@ -3365,6 +3365,12 @@ PrefabInstance:
       propertyPath: hitPoints
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3490119461789721866, guid: d88fd89a70fd095458f702e1b6242c75,
+        type: 3}
+      propertyPath: bonus
+      value: 
+      objectReference: {fileID: 2619084037834987589, guid: 4ea3b3f6331f9024a9466542fc521285,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d88fd89a70fd095458f702e1b6242c75, type: 3}
 --- !u!4 &6189512898103432051 stripped
@@ -3701,6 +3707,12 @@ PrefabInstance:
       propertyPath: Score
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3490119461789721866, guid: d88fd89a70fd095458f702e1b6242c75,
+        type: 3}
+      propertyPath: bonus
+      value: 
+      objectReference: {fileID: 4359864905208182248, guid: 6f2d7c6f6dcfedf4ca6b49eda96dd3f3,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d88fd89a70fd095458f702e1b6242c75, type: 3}
 --- !u!4 &6435706094616233262 stripped

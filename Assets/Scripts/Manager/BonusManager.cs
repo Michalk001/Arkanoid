@@ -28,9 +28,10 @@ public class BonusManager : MonoBehaviour
 
     private float counterGuns = 0f;
     private float counterOneHit = 0f;
-
+    private Vector3 newScale;
+    public float speedScale = 20f;
     private GameObject gun { get; set; } = null;
-
+    private bool finishScale = true;
     public void Reset()
     {
         if(gun != null)
@@ -66,13 +67,14 @@ public class BonusManager : MonoBehaviour
                 }
             case "paddleShort":
                 {
-
-                    ChangePaddle(1);
+                    
+                    ChangePaddle(new Vector3(13, 40, 1));
                     break;
                 }
             case "paddleStandard":
                 {
-                    ChangePaddle(0);
+                   
+                    ChangePaddle(new Vector3(25, 40, 1));
                     break;
                 }
             case "multiball":
@@ -172,27 +174,25 @@ public class BonusManager : MonoBehaviour
     #endregion
 
     #region ChangePaddle
-  
-    private void ChangePaddle(int id)
+    private Paddle paddle;
+    private void ChangePaddle(Vector3 newScale)
     {
-        if (PaddleManager.Instance.Paddles.Count  <= id)
-            return;
-        var pos = PaddleManager.Instance.Paddle.transform.position;
-        if (gun != null)
-        {
-            gun.transform.parent = null;
-        }
-        Destroy(PaddleManager.Instance.Paddle.gameObject);
-        PaddleManager.Instance.Paddle = Instantiate(PaddleManager.Instance.Paddles[id]);
-        PaddleManager.Instance.Paddle.transform.position = pos;
-        PaddleManager.Instance.Paddle.transform.parent = PaddleManager.Instance.gameObject.transform;
-        if (gun != null)
-        {
-            gun.transform.parent = PaddleManager.Instance.Paddle.gameObject.transform;
-            gun.gameObject.transform.localScale = new Vector3(0.041f, 0.024f, 0);
-        }
-
+        this.newScale = newScale;
+        paddle = PaddleManager.Instance.Paddle;
+        finishScale = false;
     }
+
+    private void ScalePaddle()
+    {
+        if (!finishScale)
+        {
+
+            paddle.transform.localScale = Vector3.Lerp(paddle.transform.localScale, newScale, speedScale * Time.deltaTime);
+            if (paddle.transform.localScale == newScale)
+                finishScale = true;
+        }
+    }
+
     #endregion
 
     #region MultiBall
@@ -229,10 +229,11 @@ public class BonusManager : MonoBehaviour
 
     #endregion
 
-public void Update()
-{
-    HiddenGuns();
-    RemoveOneHit(); 
-}
+    public void Update()
+    {
+        HiddenGuns();
+        RemoveOneHit();
+        ScalePaddle();
+    }
 
 }

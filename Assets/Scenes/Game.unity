@@ -668,7 +668,7 @@ MonoBehaviour:
   - {fileID: 3121370972513910496, guid: 5b4cfa5c28af3cd45b032fce05b2b2e1, type: 3}
   Guns:
   - {fileID: 8503603731766482280, guid: 45f5ff2b00144624fa91330c95e3cb45, type: 3}
-  speed: 100
+  speed: 500
 --- !u!1 &1640400262
 GameObject:
   m_ObjectHideFlags: 0
