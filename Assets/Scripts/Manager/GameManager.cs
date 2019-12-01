@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public int Life { get; set; } = 0;
     private void Start()
     {
+        
         Init();
         
     }
@@ -42,6 +43,8 @@ public class GameManager : MonoBehaviour
         Life = _Life;
         IsGameStart = false;
         gamePause = false;
+        AudioManager.Instance.Play("gameStart");
+        AudioManager.Instance.Play("musicThame", AudioManager.Instance.GetLength("gameStart"));
         Time.timeScale = 1;
 
     }
@@ -50,6 +53,8 @@ public class GameManager : MonoBehaviour
        
       
         Init();
+       
+        AudioManager.Instance.Play("musicThame");
         PaddleManager.Instance.Reset();
         BoardlManager.Instance.Reset();
         BallManager.Instance.Reset();
@@ -69,8 +74,9 @@ public class GameManager : MonoBehaviour
     }
     private void ShowGameOver()
     {
-        if (Life <= 0)
+        if (Life <= 0 && !gamePause)
         {
+            AudioManager.Instance.Stop("musicThame");
             AudioManager.Instance.Play("gameOver");
             gamePause = true;
             Time.timeScale = 0;

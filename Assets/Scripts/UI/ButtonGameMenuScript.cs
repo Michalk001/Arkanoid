@@ -8,6 +8,7 @@ public class ButtonGameMenuScript : MonoBehaviour
     // Start is called before the first frame update
     public void RestartGame()
     {
+        AudioManager.Instance.Stop("gameOver");
         GameManager.Instance.Reset();
     }
 
@@ -17,7 +18,9 @@ public class ButtonGameMenuScript : MonoBehaviour
     }
     public void MainMenu()
     {
+        AudioManager.Instance.Stop("musicThame");
         SceneManager.LoadScene(0);
+      
     }
 
     public void Exit()

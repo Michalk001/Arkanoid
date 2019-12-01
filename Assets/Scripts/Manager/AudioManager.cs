@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(transform.gameObject);
         if (_instance != null)
         {
             Destroy(gameObject);
@@ -35,8 +36,19 @@ public class AudioManager : MonoBehaviour
         {
             item.source = gameObject.AddComponent<AudioSource>();
             item.source.clip = item.clip;
-            item.source.pitch = 1f;
+            item.source.loop = item.loop;
+            
         }
+    }
+    public float GetLength(string name)
+    {
+        var sound = Sounds.Find(x => x.name == name);
+        if (sound != null)
+        {
+            return sound.clip.length;
+
+        }
+        return 0f;
     }
 
     public void Play(string name)
@@ -44,10 +56,40 @@ public class AudioManager : MonoBehaviour
         var sound = Sounds.Find(x => x.name == name);
         if(sound != null)
         {
-            sound.source.ignoreListenerPause = true;
             sound.source.Play();
+
         }
        
+    }
+    public void Play(string name,float delay)
+    {
+        var sound = Sounds.Find(x => x.name == name);
+        if (sound != null)
+        {
+            sound.source.PlayDelayed(delay);
+
+        }
+
+    }
+    public void Play(string name,Camera camera)
+    {
+        var sound = Sounds.Find(x => x.name == name);
+        if (sound != null)
+        {
+            AudioSource.PlayClipAtPoint(sound.clip, camera.transform.position,1.0f);
+
+        }
+        
+    }
+    public void Stop(string name)
+    {
+        var sound = Sounds.Find(x => x.name == name);
+        if (sound != null)
+        {
+
+            sound.source.Stop();
+        }
+
     }
     public void Pause(string name)
     {

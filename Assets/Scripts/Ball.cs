@@ -13,8 +13,7 @@ public class Ball : MonoBehaviour
    
     private readonly string BottomWallTag = "BottomWall";
     private readonly string PaddleTag = "Paddle";
-    private readonly string BrickTag = "Brick";
-
+    private readonly string WallTag = "Wall";
     void Start()
     {
         _damage = Damage;
@@ -47,10 +46,13 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        Debug.Log(coll.gameObject.tag);
-        if (coll.gameObject.tag == PaddleTag)
+        if(coll.gameObject.tag == WallTag || coll.gameObject.tag == PaddleTag)
         {
             AudioManager.Instance.Play("bounce");
+        }
+        if (coll.gameObject.tag == PaddleTag)
+        {
+          
             Vector3 hitPoint = coll.contacts[0].point;
             Vector3 paddleCenter = new Vector3(PaddleManager.Instance.Paddle.gameObject.transform.position.x, PaddleManager.Instance.Paddle.gameObject.transform.position.y);
             Rb.velocity = Vector2.zero;

@@ -26,7 +26,7 @@ public class Paddle : MonoBehaviour
 
         if (coll.gameObject.CompareTag("Bonus"))
         {
-            AudioManager.Instance.Play("getBonus");
+          
             var obj = coll.gameObject.GetComponent<IBonus>();
             obj.Run();
           

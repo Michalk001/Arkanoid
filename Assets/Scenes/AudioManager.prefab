@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2059806406888696507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2059806406888696506}
+  - component: {fileID: 2059806406888696505}
+  m_Layer: 0
+  m_Name: AudioManager 1 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2059806406888696506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059806406888696507}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.1176414, y: 6.2204027, z: -978.1875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2059806406888696505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059806406888696507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4fdc28a856fec4794b4b3b0c12490f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - name: nextLvL
+    clip: {fileID: 8300000, guid: 182950ac14a0c8b4c892b99d0b2c30fc, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: laserShoot
+    clip: {fileID: 8300000, guid: 94c9a2bed9026164197e354332be2974, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: hitBrick
+    clip: {fileID: 8300000, guid: b0a379ff87902e54fbd4748ea1305056, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: getBonus
+    clip: {fileID: 8300000, guid: 559ca8c43264a214eab47becda63ea75, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: changeWidth
+    clip: {fileID: 8300000, guid: 512f598d2f445ab4a935f781cbfae844, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: bounce
+    clip: {fileID: 8300000, guid: 2385c2694f707114d9befc3524753c05, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: gameOver
+    clip: {fileID: 8300000, guid: 830a72a35afdbe445bf289f3e3be61e6, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: gameStart
+    clip: {fileID: 8300000, guid: 49fd0245d27886e409b3f4de81f7324f, type: 3}
+    loop: 0
+    source: {fileID: 0}
+  - name: musicThame
+    clip: {fileID: 8300000, guid: fddadf250dc22914093f1057dd29dcca, type: 3}
+    loop: 1
+    source: {fileID: 0}
