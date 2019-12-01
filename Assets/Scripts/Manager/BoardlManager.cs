@@ -68,6 +68,8 @@ public class BoardlManager : MonoBehaviour
 
     private void ChangeBoard()
     {
+        
+
         BallManager.Instance.OneBall();
         GameManager.Instance.IsGameStart = false;
         boards[CurrentyBoard].gameObject.SetActive(false);
@@ -103,6 +105,7 @@ public class BoardlManager : MonoBehaviour
         PlayLVL = false;
         GameManager.Instance.gamePause = true;
         ++BoardNumber;
+        AudioManager.Instance.Play("nextLvL");
         Invoke("ChangeBoard", 2.5f);
     }
    

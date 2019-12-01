@@ -12,6 +12,7 @@ public class ChangeWidthPaddleBonus : MonoBehaviour, IBonus
     public void Run()
     {
         paddle = PaddleManager.Instance.Paddle;
+        AudioManager.Instance.Play("changeWidth");
         finishScale = false;
     }
     private void ScalePaddle()

@@ -31,6 +31,7 @@ public class Shoot : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space) && counter > 0.4f)
             {
+                AudioManager.Instance.Play("laserShoot");
                 Vector3 position = transform.position;
                 if (bulls.Count < 10)
                 {
@@ -51,7 +52,7 @@ public class Shoot : MonoBehaviour
                 else
                     ++bullCounter;
                 counter = 0f;
-
+              
 
 
             }

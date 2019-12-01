@@ -10,6 +10,7 @@ public class DamageBonus : MonoBehaviour, IBonus
     public int Damage = 2;
     public void Run()
     {
+        AudioManager.Instance.Play("getBonus");
         BallManager.Instance.Balls = BallManager.Instance.Balls.Select(x => { x._damage = Damage; return x; }).ToList();
        
     }

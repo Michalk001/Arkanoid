@@ -11,7 +11,6 @@ public class Bull : MonoBehaviour
     public Rigidbody2D RB;
     public float speed;
     public Transform Parent { get; set; }
-
     private readonly string BrickTag = "Brick";
     private readonly string WallTag = "Wall";
     private readonly float TimeToHidden = 2.5f;
@@ -25,6 +24,7 @@ public class Bull : MonoBehaviour
         if (coll.gameObject.tag == WallTag || coll.gameObject.tag == BrickTag)
         {
             HiddenObject();
+ 
         }
     }
 

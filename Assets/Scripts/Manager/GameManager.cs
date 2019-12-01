@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
     {
         if (Life <= 0)
         {
+            AudioManager.Instance.Play("gameOver");
             gamePause = true;
             Time.timeScale = 0;
             UIManager.Instance.ShowGameOver();

@@ -95,3 +95,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullPref: {fileID: 6730558995449545217, guid: 3cc247183fad59e469910d64422c1a5f,
     type: 3}
+  audioSource: {fileID: 0}

@@ -8,6 +8,7 @@ public class LifeBonus : MonoBehaviour, IBonus
     public bool Pernament { get; set; }
     public void Run()
     {
+        AudioManager.Instance.Play("getBonus");
         GameManager.Instance.Life += 1;
     }
     public void Run(float time)

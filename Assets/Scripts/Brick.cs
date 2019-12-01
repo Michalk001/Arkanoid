@@ -16,8 +16,8 @@ public class Brick : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Bonus bonus = null;
     private Bonus _bonus = null;
-    public GameObject _destroyEffect;
-    public GameObject _hitEffect;
+    private GameObject _destroyEffect;
+    private GameObject _hitEffect;
     private readonly string BallTag = "Ball";
     private readonly string BullTag = "Bull";
 
@@ -58,6 +58,7 @@ public class Brick : MonoBehaviour
        
 
         _hitPoints -= demage;
+        AudioManager.Instance.Play("hitBrick");
         if (_hitPoints <= 0)
         {
             if (bonus != null && _bonus == null)
@@ -105,13 +106,14 @@ public class Brick : MonoBehaviour
     {
         if (coll.gameObject.tag == BallTag)
         {
-    
+           
             if (!indestructible)
             {
                 Ball obj = coll.gameObject.GetComponent<Ball>();
                 if(obj)
                     Hit(obj._damage);
             }
+         
         }
     }
         // Update is called once per frame

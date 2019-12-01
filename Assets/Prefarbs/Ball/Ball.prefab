@@ -166,3 +166,4 @@ MonoBehaviour:
   Rb: {fileID: 8253495856356152752}
   speed: 8000
   Damage: 1
+  hitBrick: {fileID: 0}

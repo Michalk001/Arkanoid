@@ -66,14 +66,12 @@ public class GunBonus : MonoBehaviour, IBonus
        
         if (counterGuns < 0f && hiddenGun)
         {
-            Debug.Log(111111);
             gun.SetActive(false);
             hiddenGun = false;
             gameObject.SetActive(false);
         }
         else
         {
-            Debug.Log(counterGuns);
             if (!GameManager.Instance.gamePause && hiddenGun)
                 counterGuns -= Time.deltaTime;
         }

@@ -7,6 +7,7 @@ public class MultiBallBonus : MonoBehaviour, IBonus
     
     public void Run()
     {
+        AudioManager.Instance.Play("getBonus");
         SpawnBall();
     }
 
