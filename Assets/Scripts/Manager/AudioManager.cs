@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -28,7 +29,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     public List<Sound> Sounds;
-
+    [SerializeField]
+    AudioMixerGroup audioMixerGroup;
     void InitSound()
     {
 
@@ -37,7 +39,7 @@ public class AudioManager : MonoBehaviour
             item.source = gameObject.AddComponent<AudioSource>();
             item.source.clip = item.clip;
             item.source.loop = item.loop;
-            
+            item.source.outputAudioMixerGroup = audioMixerGroup;
         }
     }
     public float GetLength(string name)
