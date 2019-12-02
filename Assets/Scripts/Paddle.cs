@@ -9,6 +9,7 @@ public class Paddle : MonoBehaviour
     private float leftScreenEdge { get; set; }
     private float rightScreenEdge { get; set; }
     private BoxCollider2D boxCollider2D;
+    private float fixPositionXInBoard = 3.66f;
     void Start()
     {
         boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
@@ -32,9 +33,9 @@ public class Paddle : MonoBehaviour
           
         }
     }
-        public void PaddleStartPosition()
+    public void PaddleStartPosition()
     {
-        transform.position = new Vector3((leftScreenEdge) / 4, transform.position.y, transform.position.z);
+        transform.position = new Vector3((leftScreenEdge + rightScreenEdge), transform.position.y, transform.position.z);
     }
     private void PaddleMovement()
     {
@@ -43,10 +44,10 @@ public class Paddle : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
        
             transform.Translate(Vector2.right * horizontal * Time.deltaTime * PaddleManager.Instance.speed);
-        if (transform.position.x - boxCollider2D.size.x *11 < leftScreenEdge)
-            transform.position = new Vector2(leftScreenEdge   + boxCollider2D.size.x *11 , transform.position.y);
-        if (transform.position.x + boxCollider2D.size.x * 14 > rightScreenEdge)
-            transform.position = new Vector2(rightScreenEdge - boxCollider2D.size.x * 14, transform.position.y);
+        if (transform.position.x - boxCollider2D.size.x * gameObject.transform.localScale.x /2 + fixPositionXInBoard < leftScreenEdge)
+            transform.position = new Vector2(leftScreenEdge + boxCollider2D.size.x * gameObject.transform.localScale.x / 2 - fixPositionXInBoard, transform.position.y);
+        if (transform.position.x + boxCollider2D.size.x * gameObject.transform.localScale.x / 2 + fixPositionXInBoard > rightScreenEdge)
+            transform.position = new Vector2(rightScreenEdge - boxCollider2D.size.x * gameObject.transform.localScale.x / 2 - fixPositionXInBoard, transform.position.y);
 
 
     }

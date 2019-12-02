@@ -14,6 +14,7 @@ public class Ball : MonoBehaviour
     private readonly string BottomWallTag = "BottomWall";
     private readonly string PaddleTag = "Paddle";
     private readonly string WallTag = "Wall";
+    private readonly string BallTag = "Ball";
     void Start()
     {
         _damage = Damage;
@@ -46,6 +47,12 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+        if(coll.gameObject.tag == BallTag)
+        {
+            Physics2D.IgnoreCollision(coll.collider, gameObject.GetComponent<Collider2D>());
+           
+        }
+
         if(coll.gameObject.tag == WallTag || coll.gameObject.tag == PaddleTag)
         {
             AudioManager.Instance.Play("bounce");

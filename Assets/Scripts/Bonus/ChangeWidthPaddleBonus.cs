@@ -7,23 +7,24 @@ public class ChangeWidthPaddleBonus : MonoBehaviour, IBonus
 
     public Vector3 toScale;
     public float speed;
-    private bool finishScale = true;
+    private bool startScale;
     private Paddle paddle;
     public void Run()
     {
+      
         paddle = PaddleManager.Instance.Paddle;
         AudioManager.Instance.Play("changeWidth");
-        finishScale = false;
+        startScale = true;
     }
     private void ScalePaddle()
     {
-        if (!finishScale)
+        if (startScale)
         {
 
             paddle.transform.localScale = Vector3.Lerp(paddle.transform.localScale, toScale, speed * Time.deltaTime);
             if (paddle.transform.localScale == toScale)
             {
-                finishScale = true;
+                startScale = false;
                 Destroy(gameObject);
             }
         }

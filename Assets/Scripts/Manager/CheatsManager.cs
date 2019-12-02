@@ -11,7 +11,8 @@ public class CheatsManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-
+            MultiBallBonus multiBallBonus = new MultiBallBonus();
+            multiBallBonus.Run();
            // BonusManager.Instance.SpawnMultiBall();
 
         }
@@ -28,7 +29,7 @@ public class CheatsManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-           // BonusManager.Instance.AddGuns(20, false);
+
         }
     }
     private void NextBoard()
