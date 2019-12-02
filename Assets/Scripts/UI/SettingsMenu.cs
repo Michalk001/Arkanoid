@@ -2,16 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer audioMixer;
-    private float muteValue = -80f;
+   
+    private readonly float muteValue = -80f;
+    public Slider slider;
 
-    public void SetVolume(float volume) { 
-    
+    void Start()
+    {
+        if(GameSettingsManager.Instance != null)
+        {
+            SetSliderVolumeValue(GameSettingsManager.Instance.gameSettings.Volume);
+        }
+    }
+
+    public void SetSliderVolumeValue(float value)
+    {
+        slider.value = value;
+    }
+
+    public void SetVolume(float volume) {
+
         if (volume <= -29)
-            audioMixer.SetFloat("volume", muteValue);
+        {
+            GameSettingsManager.Instance.audioMixer.SetFloat("volume", muteValue);
+            GameSettingsManager.Instance.gameSettings.Volume = muteValue;
+        }
         else
-            audioMixer.SetFloat("volume", volume);
+        {
+            GameSettingsManager.Instance.audioMixer.SetFloat("volume", volume);
+            GameSettingsManager.Instance.gameSettings.Volume = volume;
+        }
+       
     }
 }

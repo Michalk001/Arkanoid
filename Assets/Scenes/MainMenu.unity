@@ -301,7 +301,8 @@ AudioSource:
   m_GameObject: {fileID: 330601967}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 500bcd46bed2f884aaa613270be0405e,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 8e0dfcb061f54ed4782b3cbe9e89a0ff, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -470,10 +471,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1362503176}
   m_HandleRect: {fileID: 1038108185}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -30
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: -26.1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -905,6 +906,18 @@ PrefabInstance:
       propertyPath: Sounds.Array.data[7].type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2059806406888696505, guid: 4abcaf3884a81e447ab2b380f381a58f,
+        type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 500bcd46bed2f884aaa613270be0405e,
+        type: 2}
+    - target: {fileID: 2059806406888696505, guid: 4abcaf3884a81e447ab2b380f381a58f,
+        type: 3}
+      propertyPath: audioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 500bcd46bed2f884aaa613270be0405e,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4abcaf3884a81e447ab2b380f381a58f, type: 3}
 --- !u!1 &760140944
