@@ -32,14 +32,7 @@ public class MultiBallBonus : MonoBehaviour, IBonus
         }
         BallManager.Instance.Balls.AddRange(ballstmp);
         BallManager.Instance.BallOnBoard = BallManager.Instance.Balls.Count;
-        Debug.Log(BallManager.Instance.Balls.Count);
-   /*     foreach (var item in BallManager.Instance.Balls)
-        {
-            foreach (var item2 in BallManager.Instance.Balls)
-            {
-                Physics2D.IgnoreCollision(item2.gameObject.GetComponent<Collider2D>(), item.gameObject.GetComponent<Collider2D>());
-            }
-        }*/
+   
     }
 
 }

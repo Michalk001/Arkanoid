@@ -21,7 +21,7 @@ public class SettingsMenu : MonoBehaviour
     public void SetSliderVolumeValue(float value)
     {
         slider.value = value;
-    }
+    }   
 
     public void SetVolume(float volume) {
 

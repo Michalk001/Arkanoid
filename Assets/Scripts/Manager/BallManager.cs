@@ -29,7 +29,7 @@ public class BallManager : MonoBehaviour
    
     public float initBallSpeed = 8000f;
     public int BallOnBoard { get; set; }
-
+    private readonly float startPositionYFix = 5f;
     public List<Ball> Balls { get; set; } = null;
     private void Start()
     {
@@ -55,7 +55,7 @@ public class BallManager : MonoBehaviour
                 Destroy(item.gameObject);
         Balls = null;
         Vector3 paddlePosition = PaddleManager.Instance.Paddle.gameObject.transform.position;
-        Vector3 startPosition = new Vector3(paddlePosition.x, paddlePosition.y, paddlePosition.z);
+        Vector3 startPosition = new Vector3(paddlePosition.x, paddlePosition.y + startPositionYFix, paddlePosition.z);
         var _ball = Instantiate(Ball, startPosition, Quaternion.identity);
         _ball.transform.parent = gameObject.transform;
         Balls = new List<Ball>
@@ -86,7 +86,7 @@ public class BallManager : MonoBehaviour
                 if (Balls != null)
                 {
                     Vector3 paddlePosition = PaddleManager.Instance.Paddle.gameObject.transform.position;
-                    Vector3 ballPosition = new Vector3(paddlePosition.x, paddlePosition.y + 11f, 0);
+                    Vector3 ballPosition = new Vector3(paddlePosition.x, paddlePosition.y + startPositionYFix, 0);
                     foreach (var item in Balls)
                     {
                         item.transform.position = ballPosition;
