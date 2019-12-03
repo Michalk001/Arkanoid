@@ -33,7 +33,7 @@ public class PaddleManager : MonoBehaviour
     public float leftScreenEdge { get; set; }
     public float rightScreenEdge { get; set; }
     public float speed;
-    
+    private Vector3 startPaddleScale;
     private Vector3 startPosition;
     void Start()
     {
@@ -48,11 +48,12 @@ public class PaddleManager : MonoBehaviour
         Paddle = Instantiate(PaddlePref);
         Paddle.transform.parent = gameObject.transform;
         startPosition = Paddle.transform.position;
+        startPaddleScale = Paddle.gameObject.transform.localScale;
     }
     public void Reset()
     {
         Paddle.transform.position = startPosition;
-        Paddle.transform.localScale = new Vector3(25, 40, 1);
+        Paddle.transform.localScale = startPaddleScale;
 
 
 

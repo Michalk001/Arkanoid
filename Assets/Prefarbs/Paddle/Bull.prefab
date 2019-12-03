@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6730558995449545279}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,15 +73,15 @@ SpriteRenderer:
   m_SortingLayerID: 33193421
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8367b1efbe353914480677c31bf3aa98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.19, y: 0.41}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6730558995449545217
@@ -96,10 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9b375ca8376ac40be0005965ef9738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bull: {fileID: 21300000, guid: 4e391822d1b3b7d4ea4b45554b7e2179, type: 3}
+  bull: {fileID: 21300000, guid: 8367b1efbe353914480677c31bf3aa98, type: 3}
   RB: {fileID: 5955505591173805607}
   speed: 8000
-  audioSource: {fileID: 0}
 --- !u!61 &6730558995449545219
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -116,10 +115,10 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.19, y: 0.41}
+    newSize: {x: 0.19, y: 0.41}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0

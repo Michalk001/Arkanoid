@@ -36,8 +36,7 @@ public class Shoot : MonoBehaviour
                 if (bulls.Count < 10)
                 {
                     var bull = Instantiate(bullPref, position, Quaternion.identity);
-                    bull.gameObject.transform.SetParent(gameObject.transform,false);
-                    bull.gameObject.transform.localScale = new Vector3(0.5f, 2f, 1f);
+                    bull.gameObject.transform.SetParent(gameObject.transform);
                     bull.Move();
                     bulls.Add(bull);
                     ++bullCounter;

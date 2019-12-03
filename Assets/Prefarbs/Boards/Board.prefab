@@ -483,11 +483,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sprites:
-  - {fileID: 21300000, guid: b28d1274b87424f4583eaa8a140c1869, type: 3}
-  - {fileID: 21300000, guid: ecffb2693ab7a9b4b8f51781ede20913, type: 3}
-  - {fileID: 21300000, guid: 565c12c73ff08db42beee4761ee87b49, type: 3}
+  - {fileID: 21300000, guid: 3eb4289a8f7e54244b46a8ac214eca26, type: 3}
+  - {fileID: 21300000, guid: de045a7852bd0864db61da3ccea9c317, type: 3}
+  - {fileID: 21300000, guid: 5fef1ec7b903cd24cb9d6605166d3fd2, type: 3}
   IndestructibleSprites:
-  - {fileID: 21300000, guid: 5e2b3d00af26a5647b078b770b4aca37, type: 3}
+  - {fileID: 21300000, guid: b2fe19fbcbd3bf34c9aec4ae1ba47b47, type: 3}
 --- !u!1001 &83377665034671563
 PrefabInstance:
   m_ObjectHideFlags: 0

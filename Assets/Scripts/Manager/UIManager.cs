@@ -34,7 +34,9 @@ public class UIManager : MonoBehaviour
 
     private void SetCamera(GameObject obj)
     {
+        obj.gameObject.GetComponentInChildren<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
         obj.gameObject.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
+  
     }
    
     void Start()
