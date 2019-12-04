@@ -28,8 +28,10 @@ public class Shoot : MonoBehaviour
 
         if (GameManager.Instance.IsGameStart)
         {
-
-            if (Input.GetKeyDown(KeyCode.Space) && counter > 0.4f)
+            bool touchStart = false;
+            if (Input.touchCount > 0)
+                touchStart = true;
+            if ((Input.GetKeyDown(KeyCode.Space) || touchStart) && counter > 0.4f)
             {
                 AudioManager.Instance.Play("laserShoot");
                 Vector3 position = transform.position;

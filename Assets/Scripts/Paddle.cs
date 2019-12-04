@@ -41,9 +41,17 @@ public class Paddle : MonoBehaviour
     {
         if (!BoardlManager.Instance.PlayLVL)
             return;
-        float horizontal = Input.GetAxis("Horizontal");
-       
-            transform.Translate(Vector2.right * horizontal * Time.deltaTime * PaddleManager.Instance.speed);
+        float horizontal = 0f;
+        if(Input.touchCount > 0)
+        {
+            horizontal = Input.GetAxis("Mouse X");
+        }
+        else
+            horizontal = Input.GetAxis("Horizontal");
+
+
+
+        transform.Translate(Vector2.right * horizontal * Time.deltaTime * PaddleManager.Instance.speed);
         if (transform.position.x - boxCollider2D.size.x * gameObject.transform.localScale.x /2 + fixPositionXInBoard < leftScreenEdge)
             transform.position = new Vector2(leftScreenEdge + boxCollider2D.size.x * gameObject.transform.localScale.x / 2 - fixPositionXInBoard, transform.position.y);
         if (transform.position.x + boxCollider2D.size.x * gameObject.transform.localScale.x / 2 + fixPositionXInBoard > rightScreenEdge)

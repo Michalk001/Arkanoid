@@ -93,7 +93,10 @@ public class BallManager : MonoBehaviour
                     }
               
                 }
-                if (Input.GetButtonDown("Jump"))
+                bool touchStart = false;
+                if (Input.touchCount > 0)
+                    touchStart = true;
+                if (Input.GetButtonDown("Jump")|| touchStart)
                 {
 
                     foreach (var item in Balls)
